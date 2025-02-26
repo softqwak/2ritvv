@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2ritvv", "2ritvv.csproj", "{37CAF7B3-24FA-44EA-AEA1-5C70FBF5BDAE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{37CAF7B3-24FA-44EA-AEA1-5C70FBF5BDAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37CAF7B3-24FA-44EA-AEA1-5C70FBF5BDAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37CAF7B3-24FA-44EA-AEA1-5C70FBF5BDAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37CAF7B3-24FA-44EA-AEA1-5C70FBF5BDAE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FDB3DFEE-D431-463A-9446-ED3419F60880}
+	EndGlobalSection
+EndGlobal
