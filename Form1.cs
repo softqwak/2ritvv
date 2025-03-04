@@ -15,8 +15,9 @@ namespace _2ritvv
     {
 
         private string currentState = "q0";
-        private Dictionary<(string, string), string> transitions = new Dictionary<(string, string), string>();
         private Stack<char> stack = new Stack<char>();
+        private List<(string, string, Stack<char>)> transitions = new List<(string, string, Stack<char>)>();
+        private string partWord = "";
         private bool isMiddleOfWord = false;
 
         public Form1()
@@ -45,9 +46,20 @@ namespace _2ritvv
 
         private async void btnCheck_Click(object sender, EventArgs e)
         {
+            tbxTransitions.Text = "";
             if (txtWord.Text != "" && await isPolindromeCheck(txtWord.Text))
             {
 
+            }
+            foreach(var item in transitions)
+            {
+                string magazine = "";
+                Stack<char> stack = new Stack<char>(item.Item3);
+                while (stack.Count != 0)
+                {
+                    magazine += stack.Pop();
+                }
+                tbxTransitions.Text += $"({item.Item1}, {item.Item2}, {magazine}Z0)\r\n";
             }
         }
 
@@ -59,8 +71,10 @@ namespace _2ritvv
         private async Task<bool> isPolindromeCheck(string word)
         {
             await Task.Run(async () => {
-                foreach (char symbol in word)
+                for(int i = 0; i < word.Length - 1; i++)
                 {
+                    char symbol = word[i];
+                    string partWord = word.Substring(i);
                     if (isMiddleOfWord)
                     {
                         // Логика после пройденой середины слова
@@ -69,22 +83,29 @@ namespace _2ritvv
                     else
                     {
                         // Логика до прохождения середины слова
-                        stack.Push(symbol); // Запись символов в магазин
-                        await isMiddleOfWordCheck("q1"); // Проверка на середину слова
+                        stack.Push(symbol); // Запись символов в 
+                        //if (stack != null)
+                            transitions.Add((currentState, partWord, new Stack<char>(stack)));
+                        await isMiddleOfWordCheck(partWord, stack); // Проверка на середину слова
                     }
                 }
             });
             return false;
         }
 
-        private async Task isMiddleOfWordCheck(string state, )
+        private async Task isMiddleOfWordCheck(string partWord, Stack<char> stack)
         { 
             await Task.Run(() =>
             {
-                Stack<char> cstack = new Stack<char>(stack);
-                foreach (char symbol in )
+                foreach (char symbol in partWord)
                 {
-                    char symbolForStack = cstack.Pop();
+                    if (stack.Count == 0)
+                    {
+                        isMiddleOfWord = false;
+                        return;
+                    }
+                    char symbolForStack = stack.Pop();
+
                     if (symbolForStack != symbol)
                     {
                         isMiddleOfWord = false;
