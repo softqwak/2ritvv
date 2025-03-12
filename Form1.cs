@@ -27,26 +27,9 @@ namespace _2ritvv
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            btnCheck_Click(sender, e);
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-        }
-        private void lblResult_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private async void btnCheck_Click(object sender, EventArgs e)
         {
@@ -146,6 +129,21 @@ namespace _2ritvv
         }
 
         private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbxTransitions_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void Form1_Load(object sender, EventArgs e)
         {
 
         }
